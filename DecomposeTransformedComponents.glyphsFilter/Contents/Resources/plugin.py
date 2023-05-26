@@ -36,7 +36,7 @@ class DecomposeTransformedComponents(FilterWithoutDialog):
 		if not layer.components:
 			return
 		for component in layer.components:
-			if component.transform != (1, 0, 0, 1, 0, 0):
+			if component.transform[:4] != (1, 0, 0, 1):
 				layer.decomposeComponents()
 				break
 
